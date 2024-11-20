@@ -116,16 +116,17 @@ class UsuarioRepository implements IUsuariosRepository
     {
         try {
 
-            //$usuario = UsuarioEntity::find_by_pk([$username], array());
-            $usuario = UsuarioEntity::find_by_username($username);
+            $usuario = UsuarioEntity::find_by_pk([$username], array());
+            //$usuario = UsuarioEntity::find_by_username($username);
             //$usuario = UsuarioEntity::find([$username],array() );
+            
             if (!$usuario) {
-                throw new EntityNotFoundException("Usuario $usuario No existe");
+                throw new EntityNotFoundException("Usuario $username No existe");
             }
             return $usuario->mapperEntityToModel();
 
         } catch (Exception $e) {
-            throw new EntityNotFoundException("Error al buscar el usuario $usuario: " . $e->getMessage());
+            throw new EntityNotFoundException("Error al buscar el usuario $username: " . $e->getMessage());
         }
 
     }

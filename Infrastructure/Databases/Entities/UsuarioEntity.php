@@ -6,22 +6,22 @@ class UsuarioEntity extends ActiveRecord\Model
     public static $table_name = "Usuarios";
     public static $primary_key = "numero_identificacion";
 
-    public function mappearEntityToModel(): UsuarioModel
+    public function mapperEntityToModel(): UsuarioModel
     {
         $usuarioModel = new UsuarioModel(
             $this->numero_identificacion,
-            $this->tipoIdentificacion,
+            $this->tipo_identificacion,
             $this->contrasena,
             $this->repetir_contrasena,
-            $this->preguntaRecordarContrasena,
-            $this->respuestaRecuperarContrasena,
-            $this->primerNombre,
-            $this->segundoNombre,
-            $this->primerApellido,
-            $this->segundoApellido,
+            $this->pregunta_recordar_contrasena,
+            $this->respuesta_recuperar_contrasena,
+            $this->primer_nombre,
+            $this->segundo_nombre,
+            $this->primer_apellido,
+            $this->segundo_apellido,
             $this->genero,
             $this->email,
-            $this->numeroTelefono,
+            $this->numero_telefono,
             $this->foto,
             $this->rol,
             $this->pais,
@@ -30,22 +30,22 @@ class UsuarioEntity extends ActiveRecord\Model
         return $usuarioModel;
     }
 
-    public static function mappearModelToEntity($usuarioModel): UsuarioEntity
+    public static function mapperModelToEntity($usuarioModel): UsuarioEntity
     {
         $usuarioEntity = new UsuarioEntity();
         $usuarioEntity->numero_identificacion = $usuarioModel->getNumeroIdentificacion();
-        $usuarioEntity->tipoIdentificacion = $usuarioModel->getTipoIdentificacion();
+        $usuarioEntity->tipo_identificacion = $usuarioModel->getTipoIdentificacion();
         $usuarioEntity->contrasena = $usuarioModel->getContrasena();
         $usuarioEntity->repetir_contrasena = $usuarioModel->getRepetirContrasena();
-        $usuarioEntity->preguntaRecordarContrasena = $usuarioModel->getPreguntaRecordarContrasena();
-        $usuarioEntity->respuestaRecuperarContrasena = $usuarioModel->getRespuestaRecuperarContrasena();
-        $usuarioEntity->primerNombre = $usuarioModel->getPrimerNombre();
-        $usuarioEntity->segundoNombre = $usuarioModel->getSegundoNombre();
-        $usuarioEntity->primerApellido = $usuarioModel->getPrimerApellido();
-        $usuarioEntity->segundoApellido = $usuarioModel->getSegundoApellido();
+        $usuarioEntity->pregunta_recordar_contrasena = $usuarioModel->getPreguntaRecordarContrasena();
+        $usuarioEntity->respuesta_recuperar_contrasena = $usuarioModel->getRespuestaRecuperarContrasena();
+        $usuarioEntity->primer_nombre = $usuarioModel->getPrimerNombre();
+        $usuarioEntity->segundo_nombre = $usuarioModel->getSegundoNombre();
+        $usuarioEntity->primer_apellido = $usuarioModel->getPrimerApellido();
+        $usuarioEntity->segundo_apellido = $usuarioModel->getSegundoApellido();
         $usuarioEntity->genero = $usuarioModel->getGenero();
         $usuarioEntity->email = $usuarioModel->getEmail();
-        $usuarioEntity->numeroTelefono = $usuarioModel->getNumeroTelefono();
+        $usuarioEntity->numero_telefono = $usuarioModel->getNumeroTelefono();
         $usuarioEntity->foto = $usuarioModel->getFoto();
         $usuarioEntity->rol = $usuarioModel->getRol();
         $usuarioEntity->pais = $usuarioModel->getPais();
