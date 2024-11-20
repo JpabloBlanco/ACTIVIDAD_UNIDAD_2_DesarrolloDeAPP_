@@ -6,9 +6,9 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/A
 require_once $_SERVER["DOCUMENT_ROOT"] . "/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/Infrastructure/Repository/UsuarioRepository.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/Application/Business/GuardarUsuarioService.php";
 
-//http://192.168.1.32/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/Controllers/CreateUser.php
+//http://192.168.x.xx/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/Controllers/ControllerRegisterKodular.php
 
-class CreateUser
+class ControllerRegisterKodular
 {
     private $usuarioRepository;
 
@@ -44,22 +44,17 @@ class CreateUser
 
             $guardarUsuarioService = new GuardarUsuarioService($this->usuarioRepository);
             $total = $guardarUsuarioService->guardarUsuario($usuarioModel);
-
-            $message = "Usuario Guardado, Total: $total";
-            header("Location: ../Views/Forms/Usuario/Create.php?message=$message");
-            exit;
+            
         } catch (EntityPreexistingException $e) {
             $message = $e->getMessage();
-            header("Location: ../Views/Forms/Usuario/Create.php?message=$message");
-            exit;
+           
         } catch (Exception $e) {
             $message = $e->getMessage();
-            header("Location: ../Views/Forms/Usuario/Create.php?message=$message");
-            exit;
+        
         }
     }
 }
 
 $usuarioRepository = new UsuarioRepository();
-$controlador = new CreateUser($usuarioRepository);
+$controlador = new ControllerRegisterKodular($usuarioRepository);
 $controlador->guardarUsuario();

@@ -8,9 +8,9 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/A
 require_once $_SERVER["DOCUMENT_ROOT"] . "/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/Application/Execptions/EntityPreexistingException.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/Infrastructure/Repository/UsuarioRepository.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/Application/Business/BuscarUsuarioService.php";
-//http://192.168.1.32/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/Controllers/LoginKodular.php
+//http://192.168.x.xx/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/Controllers/ControllerLoginKodular.php
 
-class LoginKodular
+class ControllerLoginKodular
 {
     private $usuarioRepository;
 
@@ -56,5 +56,5 @@ class LoginKodular
 }
 
 $usuarioRepository = new UsuarioRepository();
-$controlador = new LoginKodular($usuarioRepository);
+$controlador = new ControllerLoginKodular($usuarioRepository);
 $controlador->validarUsuario();
