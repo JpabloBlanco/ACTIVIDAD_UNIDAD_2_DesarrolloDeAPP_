@@ -3,43 +3,43 @@
 class UsuarioModel
 {
     // Atributos de la clase
-    private int $numeroIdentificacion;
-    private string $tipoIdentificacion;
-    private string $contrasena;
-    private string $repetirContrasena;
-    private string $preguntaRecordarContrasena;
-    private string $respuestaRecuperarContrasena;
-    private string $primerNombre;
-    private ?string $segundoNombre;
-    private string $primerApellido;
-    private ?string $segundoApellido;
-    private ?string $genero;
-    private string $email;
-    private ?int $numeroTelefono;
-    private ?string $foto;
-    private string $rol;
-    private string $pais;
-    private string $ciudad;
+    private $numeroIdentificacion;
+    private $tipoIdentificacion;
+    private $contrasena;
+    private $repetirContrasena;
+    private $preguntaRecordarContrasena;
+    private $respuestaRecuperarContrasena;
+    private $primerNombre;
+    private $segundoNombre;
+    private $primerApellido;
+    private $segundoApellido;
+    private $genero;
+    private $email;
+    private $numeroTelefono;
+    private $foto;
+    private $rol;
+    private $pais;
+    private $ciudad;
 
     // Constructor
     public function __construct(
-        int $numeroIdentificacion,
-        string $tipoIdentificacion,
-        string $contrasena,
-        string $repetirContrasena,
-        string $preguntaRecordarContrasena,
-        string $respuestaRecuperarContrasena,
-        string $primerNombre,
-        ?string $segundoNombre,
-        string $primerApellido,
-        ?string $segundoApellido,
-        ?string $genero,
-        string $email,
-        ?int $numeroTelefono,
-        ?string $foto,
-        string $rol,
-        string $pais,
-        string $ciudad
+        $numeroIdentificacion,
+        $tipoIdentificacion,
+        $contrasena,
+        $repetirContrasena,
+        $preguntaRecordarContrasena,
+        $respuestaRecuperarContrasena,
+        $primerNombre,
+        $segundoNombre,
+        $primerApellido,
+        $segundoApellido,
+        $genero,
+        $email,
+        $numeroTelefono,
+        $foto,
+        $rol,
+        $pais,
+        $ciudad
     ) {
         $this->numeroIdentificacion = $numeroIdentificacion;
         $this->tipoIdentificacion = $tipoIdentificacion;
@@ -61,155 +61,155 @@ class UsuarioModel
     }
 
     // Métodos Getters y Setters
-    public function getNumeroIdentificacion(): int
+    public function getNumeroIdentificacion()
     {
         return $this->numeroIdentificacion;
     }
-    public function setNumeroIdentificacion(int $numeroIdentificacion): void
+    public function setNumeroIdentificacion($numeroIdentificacion)
     {
         $this->numeroIdentificacion = $numeroIdentificacion;
     }
 
-    public function getTipoIdentificacion(): string
+    public function getTipoIdentificacion()
     {
         return $this->tipoIdentificacion;
     }
-    public function setTipoIdentificacion(string $tipoIdentificacion): void
+    public function setTipoIdentificacion($tipoIdentificacion)
     {
         $this->tipoIdentificacion = $tipoIdentificacion;
     }
 
-    public function getContrasena(): string
+    public function getContrasena()
     {
         return $this->contrasena;
     }
-    public function setContrasena(string $contrasena): void
+    public function setContrasena($contrasena)
     {
         $this->contrasena = $contrasena;
     }
 
-    public function getRepetirContrasena(): string
+    public function getRepetirContrasena()
     {
         return $this->repetirContrasena;
     }
-    public function setRepetirContrasena(string $repetirContrasena): void
+    public function setRepetirContrasena($repetirContrasena)
     {
         $this->repetirContrasena = $repetirContrasena;
     }
 
-    public function getPreguntaRecordarContrasena(): string
+    public function getPreguntaRecordarContrasena()
     {
         return $this->preguntaRecordarContrasena;
     }
-    public function setPreguntaRecordarContrasena(string $preguntaRecordarContrasena): void
+    public function setPreguntaRecordarContrasena($preguntaRecordarContrasena)
     {
         $this->preguntaRecordarContrasena = $preguntaRecordarContrasena;
     }
 
-    public function getRespuestaRecuperarContrasena(): string
+    public function getRespuestaRecuperarContrasena()
     {
         return $this->respuestaRecuperarContrasena;
     }
-    public function setRespuestaRecuperarContrasena(string $respuestaRecuperarContrasena): void
+    public function setRespuestaRecuperarContrasena($respuestaRecuperarContrasena)
     {
         $this->respuestaRecuperarContrasena = $respuestaRecuperarContrasena;
     }
 
-    public function getPrimerNombre(): string
+    public function getPrimerNombre()
     {
         return $this->primerNombre;
     }
-    public function setPrimerNombre(string $primerNombre): void
+    public function setPrimerNombre($primerNombre)
     {
         $this->primerNombre = $primerNombre;
     }
 
-    public function getSegundoNombre(): ?string
+    public function getSegundoNombre()
     {
         return $this->segundoNombre;
     }
-    public function setSegundoNombre(?string $segundoNombre): void
+    public function setSegundoNombre($segundoNombre)
     {
         $this->segundoNombre = $segundoNombre;
     }
 
-    public function getPrimerApellido(): string
+    public function getPrimerApellido()
     {
         return $this->primerApellido;
     }
-    public function setPrimerApellido(string $primerApellido): void
+    public function setPrimerApellido($primerApellido)
     {
         $this->primerApellido = $primerApellido;
     }
 
-    public function getSegundoApellido(): ?string
+    public function getSegundoApellido()
     {
         return $this->segundoApellido;
     }
-    public function setSegundoApellido(?string $segundoApellido): void
+    public function setSegundoApellido($segundoApellido)
     {
         $this->segundoApellido = $segundoApellido;
     }
 
-    public function getGenero(): ?string
+    public function getGenero()
     {
         return $this->genero;
     }
-    public function setGenero(?string $genero): void
+    public function setGenero($genero)
     {
         $this->genero = $genero;
     }
 
-    public function getEmail(): string
+    public function getEmail()
     {
         return $this->email;
     }
-    public function setEmail(string $email): void
+    public function setEmail($email)
     {
         $this->email = $email;
     }
 
-    public function getNumeroTelefono(): ?int
+    public function getNumeroTelefono()
     {
         return $this->numeroTelefono;
     }
-    public function setNumeroTelefono(?int $numeroTelefono): void
+    public function setNumeroTelefono($numeroTelefono)
     {
         $this->numeroTelefono = $numeroTelefono;
     }
 
-    public function getFoto(): ?string
+    public function getFoto()
     {
         return $this->foto;
     }
-    public function setFoto(?string $foto): void
+    public function setFoto($foto)
     {
         $this->foto = $foto;
     }
 
-    public function getRol(): string
+    public function getRol()
     {
         return $this->rol;
     }
-    public function setRol(string $rol): void
+    public function setRol($rol)
     {
         $this->rol = $rol;
     }
 
-    public function getPais(): string
+    public function getPais()
     {
         return $this->pais;
     }
-    public function setPais(string $pais): void
+    public function setPais($pais)
     {
         $this->pais = $pais;
     }
 
-    public function getCiudad(): string
+    public function getCiudad()
     {
         return $this->ciudad;
     }
-    public function setCiudad(string $ciudad): void
+    public function setCiudad($ciudad)
     {
         $this->ciudad = $ciudad;
     }

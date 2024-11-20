@@ -3,16 +3,16 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/I
 require_once $_SERVER["DOCUMENT_ROOT"] . "/ACTIVIDAD_UNIDAD_2_DesarrolloDeAPP_/Domain/Model/UsuarioModel.php";
 class UsuarioEntity extends ActiveRecord\Model
 {
-    public static $table_name = "usuarios";
-    public static $primary_key = "id";
+    public static $table_name = "Usuarios";
+    public static $primary_key = "numero_identificacion";
 
     public function mappearEntityToModel(): UsuarioModel
     {
-        return new UsuarioModel(
-            $this->cedula,
+        $usuarioModel = new UsuarioModel(
+            $this->numero_identificacion,
             $this->tipoIdentificacion,
             $this->contrasena,
-            $this->repetirContrasena,
+            $this->repetir_contrasena,
             $this->preguntaRecordarContrasena,
             $this->respuestaRecuperarContrasena,
             $this->primerNombre,
@@ -27,15 +27,16 @@ class UsuarioEntity extends ActiveRecord\Model
             $this->pais,
             $this->ciudad
         );
+        return $usuarioModel;
     }
 
     public static function mappearModelToEntity($usuarioModel): UsuarioEntity
     {
-        $usuarioEntity = new self();
-        $usuarioEntity->cedula = $usuarioModel->getNumeroIdentificacion();
+        $usuarioEntity = new UsuarioEntity();
+        $usuarioEntity->numero_identificacion = $usuarioModel->getNumeroIdentificacion();
         $usuarioEntity->tipoIdentificacion = $usuarioModel->getTipoIdentificacion();
         $usuarioEntity->contrasena = $usuarioModel->getContrasena();
-        $usuarioEntity->repetirContrasena = $usuarioModel->getRepetirContrasena();
+        $usuarioEntity->repetir_contrasena = $usuarioModel->getRepetirContrasena();
         $usuarioEntity->preguntaRecordarContrasena = $usuarioModel->getPreguntaRecordarContrasena();
         $usuarioEntity->respuestaRecuperarContrasena = $usuarioModel->getRespuestaRecuperarContrasena();
         $usuarioEntity->primerNombre = $usuarioModel->getPrimerNombre();
